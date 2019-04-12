@@ -1,0 +1,17 @@
+server:
+  port: 8001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://myfate7001.com:7001/eureka
+      #,http://myfate7001.com:7001/eureka
+  instance:
+    instance-id: myEurekaclient-8001
+    prefer-ip-address: true
+spring:
+  application:
+    name: eurekaClient
+info:
+  app.name: fate
+  build.artifactId: myEurekaClient
+  build.version: 0.0.1-SNAPSHOT

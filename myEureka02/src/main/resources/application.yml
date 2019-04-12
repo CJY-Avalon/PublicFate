@@ -1,0 +1,13 @@
+server:
+  port: 7002
+
+eureka:
+  instance:
+    hostname: myfate7002.com #eureka的服务实例名称
+  client:
+    register-with-eureka: false #false表示不向服务中心注册自己
+    fetch-registry: false #false表示我自己就是注册中心
+    service-url:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://myfate7001.com:7001
+
