@@ -10,8 +10,11 @@ import javax.persistence.Id;
 
 @Entity
 public class Servent {
-	/*@Id@GenericGenerator(name = "uuid2", strategy = "uuid2")
+	@Id
+	/*@GenericGenerator(name = "uuid2", strategy = "uuid2")
 	@GeneratedValue(generator = "uuid2")*/
+	@GenericGenerator(name = "uuid", strategy = "uuid")
+	@GeneratedValue(generator = "uuid")
 	@Column(length = 36)
 	private int ID;
 	@Column(length = 36)

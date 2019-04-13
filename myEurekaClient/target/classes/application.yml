@@ -11,6 +11,8 @@ eureka:
 spring:
   application:
     name: eurekaClient
+  main:
+    allow-bean-definition-overriding: true
 info:
   app.name: fate
   build.artifactId: myEurekaClient

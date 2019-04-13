@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<script src="webjars/jquery/3.1.1/jquery.js"></script>
+ <script src="webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="webjars/bootstrap/4.1.0/css/bootstrap.css"> 
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.card{
+position: relative;
+width:20%;
+float: left;
+border: none;
+background-color: rgba(255,255,255,0.01);
+}
+.cards{
+width:100%;
+height:620px;
+
+}
+#cardbody{
+position: absolute;
+left:5%;
+	top: 20%;
+}
+
+</style>
+</head>
+<body >
+<a href="/GO">
+		<div class="cards"  style="background: url(/pic/Get_Cards_background.jpg); background-size: 100% 100%" >
+			<div id="cardbody"><div id="touming"  class="card"  th:id="${-1}" th:each="servent : ${Servent}">
+				<div id="touming" th:if="${servent.Servent_ID } le 9">
+					<img
+						th:src="@{'https://cdn.umowang.com/media/fgo/servant/head/00'+${servent.Servent_ID }+'.jpg'}">
+				</div>
+				<div  th:if="${servent.Servent_ID } gt 9">
+					<div id="touming"  th:if="${servent.Servent_ID } le 99 ">
+						<img
+							th:src="@{'https://cdn.umowang.com/media/fgo/servant/head/0'+${servent.Servent_ID}+'.jpg'}">
+					</div>
+				</div>
+				<div  id="touming" th:if="${servent.Servent_ID } gt 99 ">
+					<img
+						th:src="@{'https://cdn.umowang.com/media/fgo/servant/head/'+${servent.Servent_ID}+'.jpg'}">
+				</div>
+				<div id="text"> &nbsp;</div> <!-- th:text="${Rtiuial.RtiuialName}" -->
+			</div>
+		<div id="touming" class="card"  th:id="${-1}" th:each="Rtiuial : ${Rtiuial}">
+			<div id="touming"  th:if="${Rtiuial.RtiuialID } le 9">
+				<img id="touming"
+					th:src="@{'https://cdn.umowang.com/media/fgo/equip/head/00'+${Rtiuial.RtiuialID}+'.jpg'}">
+			</div>
+			<div id="touming"  th:if="${Rtiuial.RtiuialID } gt 9 ">
+				<div id="touming" th:if="${Rtiuial.RtiuialID } le 99 ">
+					<img id="touming"
+						th:src="@{'https://cdn.umowang.com/media/fgo/equip/head/0'+${Rtiuial.RtiuialID}}+'.jpg'">
+				</div>
+			</div>
+			<div id="touming" th:if="${Rtiuial.RtiuialID } gt 99 ">
+				<img id="touming"
+					th:src="@{'https://cdn.umowang.com/media/fgo/equip/head/'+${Rtiuial.RtiuialID}+'.jpg'}">
+			</div>
+			<div id="text"> &nbsp;</div> <!-- th:text="${Rtiuial.RtiuialName}" -->
+		</div>
+		</div>
+	</div>
+</a>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+	for (var j=0;j<10;j++){
+		document.getElementById(-1+j).style.display="none";
+		document.getElementById("-1").id=j;
+	}
+});
+ 
+ $(document).ready( function s(){
+	 for(var i=0;i<10;i++){
+		 (function(i){
+			 setTimeout(function(){
+					document.getElementById(i).style.display="block";
+			 } ,i*500);
+		 })(i);
+	 }
+}); 
+
+
+</script>
+</html>

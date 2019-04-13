@@ -10,8 +10,10 @@ import javax.persistence.Id;
 @Entity
 public class Rtiuial {
 	@Id
-	@GenericGenerator(name = "uuid2", strategy = "uuid2")
-	@GeneratedValue(generator = "uuid2")
+/*	@GenericGenerator(name = "uuid2", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid2")*/
+	@GenericGenerator(name = "uuid", strategy = "uuid")
+	@GeneratedValue(generator = "uuid")
 	@Column(length = 36)
 	private int id;
 	@Column(length = 30)

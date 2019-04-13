@@ -1,4 +1,4 @@
-package com.myEruekaClient.Controller;
+package com.myEruekaClient.fategame.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;

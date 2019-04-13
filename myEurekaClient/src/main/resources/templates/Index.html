@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<script src="webjars/jquery/3.1.1/jquery.js"></script>
+<script src="webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="webjars/bootstrap/4.1.0/css/bootstrap.css">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style type="text/css">
+#background {
+	width: 100%;
+	height: 610px
+}
+
+#ten {
+	z-index: 1;
+	position: absolute;
+	left: 55%;
+	top: 69%;
+}
+
+#one {
+	z-index: 1;
+	position: absolute;
+	left: 25.5%;
+	top: 69%;
+}
+
+#cancle{
+margin-left: 10%;
+}
+
+</style>
+<body>
+	<div id="background"
+		style="background: url(/pic/Get_Cards.jpg); background-size: 100% 100%">
+		<div id="ten" style=" width: 20%; height: 12%"></div>
+		<div id="one" style=" width: 20%; height: 12%"></div>
+		<div id="ready30" class="modal fade " tabindex="-1" role="dialog"
+			aria-labelledby="Close">
+			<div class="modal-dialog " role="document">
+				<div class="modal-content">
+					<div id="g30" style="background-color: #bbffee; height: 80px;text-align: center;">确定花费30圣晶石抽取十次卡牌并兑换10000QP吗?
+					<div><form action="/Ten" method="post">
+						<button id="sure" type="submit" class="btn btn-success" style="width: 20%">确认</button>
+						<button id="cancle1"  type="button" class="btn btn-danger" style="width: 20%">取消</button></form>
+					</div></div>
+					
+				</div>
+				<div></div>
+			</div>
+		</div>
+		<div id="ready1" class="modal fade " tabindex="-1" role="dialog"
+			aria-labelledby="Close">
+			<div class="modal-dialog " role="document">
+				<div class="modal-content">
+					<div id="g1" style="background-color: #bbffee; height: 80px;text-align: center;">确定花费3圣晶石抽取一次卡牌并兑换1000QP吗?
+					<div><form action="/One" method="post">
+						<button id="sure" type="submit" class="btn btn-success" style="width: 20%">确认</button>
+						<button id="cancle1"  type="button" class="btn btn-danger" style="width: 20%">取消</button></form>
+					</div></div>
+					
+				</div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+	$('#ten').bind("click", function() {
+		$('#ready30').modal("show");
+	});
+	$('#one').bind("click", function() {
+		$('#ready1').modal("show");
+	});
+	$('#cancle').click(function() {
+		$('.modal').modal("hide");
+	});
+	$('#cancle1').click(function() {
+		$('.modal').modal("hide");
+	});
+</script>
+</html>
